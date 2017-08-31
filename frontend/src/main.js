@@ -6,7 +6,7 @@ Vue.use(VueResource);
 
 
 
-Vue.http.options.root = 'http://localhost:9080/mytwitter/';
+Vue.http.options.root = 'http://localhost:9080/';
 
 //Vue.http.options.root  = "http://mytwitter.us-east-2.elasticbeanstalk.com/";
 

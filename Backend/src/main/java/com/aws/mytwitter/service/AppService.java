@@ -1,4 +1,4 @@
-package com.aws.mytwitter.Service;
+package com.aws.mytwitter.service;
 
 import javax.transaction.Transactional;
 

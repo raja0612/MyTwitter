@@ -7,12 +7,12 @@
 </div>
 <ul class="nav navbar-nav">
   <li><router-link to="/" class="nav-item nav-link">Home</router-link></li>
-  <li><a href="#">Page 1</a></li>
-  <li><a href="#">Page 2</a></li>
+  <li><router-link to="/events" class="nav-item nav-link">Event</router-link></li>
+  <li><router-link to="/event/register" class="nav-item nav-link">Register Event</router-link></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
   <li><router-link to="/signup" class="nav-item nav-link">Sign Up</router-link></li>
-  <li><router-link to="/login" class="nav-item nav-link ">Login</router-link></li>
+  <!-- <li><router-link to="/login" class="nav-item nav-link ">Login</router-link></li> -->
 </ul>
 </div>
 </nav>

@@ -14,7 +14,7 @@ import com.aws.mytwitter.entity.Tweet;
 import com.aws.mytwitter.repository.TweetRepository;
 
 @RestController
-public class TWeetController {
+public class TweetController {
 
 	@Autowired
 	private TweetRepository tweetRepository;

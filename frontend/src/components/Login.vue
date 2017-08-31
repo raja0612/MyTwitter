@@ -54,7 +54,7 @@ export default{
   methods:{
     login(){
       console.log(this.user);
-      let url = "http://localhost:9080/mytwitter/login";
+      let url = "http://localhost:9080/login";
       //let url = "http://mytwitter.us-east-2.elasticbeanstalk.com/login";
       let params = 'username='+this.user.username+'&password='+this.user.password;
       //let headers = new Headers(
@@ -80,7 +80,7 @@ export default{
       });
     },
     logout () {
-          let url = "http://localhost:9080/mytwitter/logout";
+          let url = "http://localhost:9080/logout";
           //let url = "http://mytwitter.us-east-2.elasticbeanstalk.com/logout";
           this.$http.get(url).then((res) => {
             localStorage.setItem('loggedIn', 'false');

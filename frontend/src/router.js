@@ -5,6 +5,7 @@ Vue.use(Router)
 
 import TwitterPanel from './components/TwitterPanel.vue';
 import SignUp from './components/SignUp.vue';
+//import Login from './components/Login.vue';
 
 
 
@@ -15,5 +16,6 @@ mode: 'history',
 routes: [
   { path: '/', component: TwitterPanel },
   { path: '/signup', component: SignUp },
+  //{ path: '/login', component: Login },
 ]
 })

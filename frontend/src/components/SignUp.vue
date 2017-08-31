@@ -54,7 +54,7 @@
     },
     methods : {
       register() {
-        let url = 'http://localhost:9080/mytwitter/signup';
+        let url = 'http://localhost:9080/signup';
         //let produrl = 'http://mytwitter.us-east-2.elasticbeanstalk.com/signup';
 
         this.$http.post(url, this.user).then((res) => {
