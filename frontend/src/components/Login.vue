@@ -4,7 +4,7 @@
       <p v-if="authFailed">Invalid Username and Password</p>
       <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
       <p id="profile-name" class="profile-name-card"></p>
-      <form class="form-signin">{{user.username}} {{user.password}}
+      <form class="form-signin">
         <input v-model="user.username"
         type="text" name="username" class="form-control" placeholder="Username" required autofocus>
         <input v-model="user.password" type="password" name="password" class="form-control" placeholder="Password" required>
@@ -23,13 +23,14 @@
       <a class="btn btn-warning" @click="logout">Logout</a>
       <br><br>
       <div>
-        <!-- <post-message></post-message> -->
+         <app-post-tweet></app-post-tweet> <!-- after user login show post tweet component-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Tweet from './PostTweet.vue';
 export default{
   data(){
     return{
@@ -54,7 +55,7 @@ export default{
   methods:{
     login(){
       console.log(this.user);
-      let url = "http://localhost:9080/login";
+      //let url = "http://localhost:9080/login";
       //let url = "http://mytwitter.us-east-2.elasticbeanstalk.com/login";
       let params = 'username='+this.user.username+'&password='+this.user.password;
       //let headers = new Headers(
@@ -64,7 +65,7 @@ export default{
       //this.$http.options.xhr = {withCredentials : true};
 
       // send post request
-      this.$http.post(url, params, {credentials: true, headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then((res) => {
+      this.$http.post("login", params, {credentials: true, headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then((res) => {
         // success callback
         this.loggedIn=true;
         localStorage.setItem('loggedIn', 'true');
@@ -80,14 +81,17 @@ export default{
       });
     },
     logout () {
-          let url = "http://localhost:9080/logout";
+          //let url = "http://localhost:9080/logout";
           //let url = "http://mytwitter.us-east-2.elasticbeanstalk.com/logout";
-          this.$http.get(url).then((res) => {
+          this.$http.get("logout").then((res) => {
             localStorage.setItem('loggedIn', 'false');
             localStorage.setItem('username', '');
             location.reload();
           });
         },
+  },
+  components :{
+      appPostTweet: Tweet
   }
 }
 

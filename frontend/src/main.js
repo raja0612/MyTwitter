@@ -1,5 +1,9 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import dt from 'datatables.net';
+
+
+
 
 
 Vue.use(VueResource);

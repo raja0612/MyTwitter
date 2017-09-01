@@ -23,14 +23,20 @@ public class TweetController {
 	public @ResponseBody List<Tweet> getAllTweets() {
 		return tweetRepository.findAll();
 	}
-	
+
 	@PostMapping("/addDummyTweets")
-	public void addDummyTweets(@RequestBody Tweet tweet){
-		 tweet.setDate(new Date());
-		 tweetRepository.save(tweet);
-		
+	public void addDummyTweets(@RequestBody Tweet tweet) {
+		tweet.setDate(new Date());
+		tweetRepository.save(tweet);
+
 	}
-	
-	
+
+	@PostMapping("/tweet")
+	public void postUserTweet(@RequestBody Tweet tweet) {
+		System.out.println("User Tweet" + tweet);
+		tweet.setDate(new Date());
+		tweetRepository.save(tweet);
+
+	}
 
 }

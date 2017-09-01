@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
 	}
 
-	private static final String[] PUBLIC_ASSETS = { "/css/**", "/js/**", "/images/**", "/tweets/**", "/signup/**",
+	private static final String[] PUBLIC_ASSETS = { "/css/**", "/js/**", "/images/**", "/tweets/**", "/signup/**", "/tweet",
 			"/tokenValidation/**"
 
 	};

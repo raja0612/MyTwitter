@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Tweet {
 
@@ -33,6 +35,7 @@ public class Tweet {
 		this.description = description;
 	}
 
+	@JsonFormat(pattern="MM/dd/yyyy")
 	public Date getDate() {
 		return date;
 	}

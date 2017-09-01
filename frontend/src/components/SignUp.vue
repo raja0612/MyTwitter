@@ -54,10 +54,10 @@
     },
     methods : {
       register() {
-        let url = 'http://localhost:9080/signup';
+        //let url = 'http://localhost:9080/signup';
         //let produrl = 'http://mytwitter.us-east-2.elasticbeanstalk.com/signup';
 
-        this.$http.post(url, this.user).then((res) => {
+        this.$http.post("signup", this.user).then((res) => {
           console.log(res);
           this.signed=true;
         }, (err) => {
